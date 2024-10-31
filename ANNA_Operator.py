@@ -12,7 +12,7 @@ from aiogram.dispatcher.filters import Command
 from aiogram.dispatcher.filters import Text
 timezone = pytz.timezone('Etc/GMT')
 
-bot = Bot(token="6610536065:AAEzvNiLgFtUYi5a0lxgcbNYJwukwahiGXc")
+bot = Bot(token="token")
 storage = MemoryStorage()
 dispatcher = Dispatcher(bot, storage=storage)
 
@@ -23,17 +23,17 @@ async def start_command(message: types.Message):
     global output
     i=0
     while i!=1:
-        url = 'https://tropico.op.axcapital.ae/api/auth/token/'
+        url = 'link'
         otvet = requests.post(url, headers={'x-token-id': "hello-bob"},
                               data={
-                                  "username": "sardor",
-                                  "password": "admin"
+                                  "username": "login",
+                                  "password": "pass"
                               })
         tokenmain = otvet.json()
         token_start = tokenmain['access']
         refresh = tokenmain['refresh']
 
-        response_start = requests.get('https://tropico.op.axcapital.ae/report/chats/?page=1&ordering=-updated_at',
+        response_start = requests.get('update link',
                                       headers={'Authorization': f'Bearer {str(token_start)}'})
         data = response_start.json()
         print(data)
